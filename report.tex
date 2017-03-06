@@ -92,29 +92,29 @@ PBS & Torque &\\
 \newline
 % Details of HPL Test, such as MAX score, config and so on...\\
 % I wish you the best of success.
-1) HPL install \\
+\subsubsection{HPL install}
 
 In this test and optimize, we chose Intel® Optimized LINPACK. \\
 
-2) Test Step \\
+\subsubsection{Test Step}
 
-2.1) PxQ \\
+\subsubsection{PxQ}
 
 Because Intel® Optimized LINPACK use all CPU core in multi-thread
 by default, so we set P x Q to 1 x 1. \\
 
-2.2) BLAS \\
+\subsubsection{BLAS}
 There are many blas, such as openblas, mkl, gogoblas and atlas.
 Because we are using intel xeon phi, MKL will be the best choice \\
 
-2.3) N \\
+\subsubsection{N}
 Experience tells us, N can be calculated by 
 \[ N^2 * 8 = MEM * 80\% \]
 
 so N should have been  82900, but in our test, when N is set to \\
 35000, GFlops reach to 1.7GFlops, which is much higher when N is 829000 \\
 
-\begin{tabular}{|c|c|c|c|c|c|c|}
+\noindent \begin{tabular}{|c|c|c|c|c|c|c|}
 \hline
 N &  33000 & 34000 & 35000 & 36000 & 37000  \\
 \hline
@@ -126,9 +126,8 @@ Time (S) &14.08 &15.4 &16.68 &18.21 &22.5 \\
 \newline
 \newline
 \par
-2.4) NB \\
-\par
-\begin{tabular}{|c|c|c|c|}
+\subsubsection{NB}
+\noindent \begin{tabular}{|c|c|c|c|}
 \hline
 NB & 232 & 256 & 296 \\
 \hline
